@@ -27,7 +27,8 @@ app.set("views", templates_path);
 hbs.registerPartials(partials_path);
 
 app.get("/", async(request, response) => {
-    response.render("index");
+    response.render("home");
+    // response.render("index");
 })
 
 app.get("/signup", async(request, response) => {
