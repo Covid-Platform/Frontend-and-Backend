@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(`mongodb://localhost:27017/${process.env.DATABASE}`).then(() => {
+// const db = "mongodb+srv://covid-platform:covid-platform@cluster0.wasrhta.mongodb.net/test"
+mongoose.connect(`mongodb+srv://${process.env.DATABASE}:${process.env.PASSWORD}@cluster0.wasrhta.mongodb.net/users`).then(() => {
     console.log("Connection is successfully connected.");
 }).catch((e) => {
     console.log("Error!!");

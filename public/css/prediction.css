@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap");
+
+:root {
+  --blue: #3c6382;
+  --dark-blue: #0a3d62;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.3s cubic-bezier(0.38, 1.15, 0.7, 1.12);
+}
+
+
+:root {
+  --blue: #3c6382;
+  --dark-blue: #0a3d62;
+}
+
+
+*::selection {
+  background: var(--dark-blue);
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 1rem 9%;
+  padding-top: 8rem;
+}
+
+.heading {
+  text-align: center;
+  color: var(--blue);
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 1rem;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+header .logo {
+  font-size: 2.5rem;
+  color: var(--dark-blue);
+}
+
+header .logo span {
+  color: var(--blue);
+}
+
+header .navbar a {
+  font-size: 1.7rem;
+  margin-left: 0.7rem;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  color: var(--dark-blue);
+}
+
+header .navbar a.active,
+header .navbar a:hover {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header.sticky {
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+#menu {
+  font-size: 3rem;
+  color: var(--blue);
+  cursor: pointer;
+  display: none;
+}
+
+.home {
+  background: url("./4198555.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.home .content {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.home .content h1 {
+  font-size: 5rem;
+  color: var(--dark-blue);
+}
+
+.home .content h3 {
+  font-size: 4rem;
+  color: var(--blue);
+  font-weight: normal;
+}
+
+.home .content .btn {
+  display: inline-block;
+  padding: 0.7rem 3rem;
+  color: #fff;
+  background: var(--blue);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  font-size: 1.7rem;
+}
+
+.home .content .btn:hover {
+  background: var(--dark-blue);
+}
+
+
+
+
+.form_container{
+    margin-top: 10px !important;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border: 2px solid #3c6382;
+    border-radius: 5px;
+    display: flex;
+    padding: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* .form{
+    position: inherit;
+    margin: auto;
+    
+} */
+
+.form-control{
+    width: 47%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}

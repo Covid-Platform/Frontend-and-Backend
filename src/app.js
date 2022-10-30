@@ -39,6 +39,22 @@ app.get("/signin", async(request, response) => {
     response.render("signin");
 })
 
+app.get("/profile", async(request, response) => {
+    response.render("profile");
+})
+
+app.get("/recipe", async(request, response) => {
+    response.render("recipe");
+})
+
+app.get("/physiotherapy", async(request, response) => {
+    response.render("physiotherapy");
+})
+
+app.get("/prediction", async(request, response) => {
+    response.render("prediction");
+})
+
 app.post("/signup", async(request, response) => {
     try {
         const password = request.body.password;

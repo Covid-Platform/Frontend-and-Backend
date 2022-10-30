@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    background-color: #FFFFFF;
+}
+
+:root {
+    --blue: #3c6382;
+    --dark-blue: #0a3d62;
+  }
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  
+  header .logo {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+  }
+  
+  header .logo span {
+    color: var(--blue);
+  }
+  
+  header .navbar a {
+    font-size: 1.7rem;
+    margin-left: 0.7rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    color: var(--dark-blue);
+  }
+  
+  header .navbar a.active,
+  header .navbar a:hover {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+  
+  header.sticky {
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+
+.card{
+    width: 350px;
+    height: 400px;
+    margin-top: 200px;
+    border-radius: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid rgb(233, 237, 240);
+    background-color: rgb(234, 241, 247);
+    color: rgb(51, 48, 48);
+}
+.img-name{
+    width: 100%;
+    height: 210px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -75px;
+    
+    border-bottom: 5px solid #0A3D62
+}
+.img-name img{
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 70px;
+    border: 5px solid rgb(202, 202, 233);
+    background-color: rgb(234, 241, 247);
+}
+.img-name h2{
+    text-align: center;
+    padding: 16px;
+    font-size: large
+}
+.followers{
+    height: 140px;
+    padding-top: 50px;
+    font-size: small;
+}
+.followers h3{
+    text-align: center;
+}
+.button-follow{
+    height: 115px;
+}
+.button-follow  button{
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    background-color: #0A3D62;
+     border-radius: 10px;
+     font-size: 18px;
+    color:white;
+}
+.button-follow button:hover{
+    background-color: rgb(180, 180, 226);
+    color: black;
+}
