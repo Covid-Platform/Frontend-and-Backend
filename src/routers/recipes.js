@@ -4,6 +4,7 @@ const path = require('path');
 const hbs = require("hbs");
 
 const Recipe = require("../models/recipes");
+const auth = require("../middleware/auth");
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.set("view engine", "hbs");
 app.set("views", templates_path);
 hbs.registerPartials(partials_path);
 
-router.post("/recipe", async(request, response) => {
+router.post("/recipe", auth, async(request, response) => {
     try {
         const recipe = new Recipe({
             title: request.body.title,
@@ -33,7 +34,7 @@ router.post("/recipe", async(request, response) => {
     }
 })
 
-router.get("/recipe", async(request, response) => {
+router.get("/recipe", auth, async(request, response) => {
     try {
         const recipe = await Recipe.find();
         console.log("The success part:\n" + recipe);

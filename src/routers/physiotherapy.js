@@ -4,6 +4,7 @@ const path = require('path');
 const hbs = require("hbs");
 
 const Exercise = require("../models/exercise");
+const auth = require("../middleware/auth");
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.set("view engine", "hbs");
 app.set("views", templates_path);
 hbs.registerPartials(partials_path);
 
-router.post("/physiotherapy", async(request, response) => {
+router.post("/physiotherapy", auth, async(request, response) => {
     try {
         const exercise = new Exercise({
             title: request.body.title,
@@ -34,7 +35,7 @@ router.post("/physiotherapy", async(request, response) => {
     }
 })
 
-router.get("/physiotherapy", async(request, response) => {
+router.get("/physiotherapy", auth, async(request, response) => {
     try {
         const exercise = await Exercise.find();
         console.log("The success part:\n" + exercise);

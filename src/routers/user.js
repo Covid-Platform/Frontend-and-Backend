@@ -41,7 +41,9 @@ router.post("/signup", async(request, response) => {
             console.log("The token is - " + token);
 
             response.cookie("jwt", token, {
-                httpOnly: true
+                expires: new Date(Date.now() + 6000000),
+                httpOnly: true,
+                secure: true,
             });
 
             const createUser = await registerUser.save();
@@ -68,7 +70,9 @@ router.post("/signin", async(request, response) => {
         console.log("The token is - " + token);
 
         response.cookie("jwt", token, {
-            httpOnly: true
+            expires: new Date(Date.now() + 6000000),
+            httpOnly: true,
+            secure: true,
         });
 
         if (status) {

@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const hbs = require("hbs");
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = process.env.PORT || 8002;
@@ -12,13 +13,10 @@ const partials_path = path.join(__dirname, "../templates/partials");
 
 require('./db/connect');
 
-const Exercise = require("./models/exercise");
-
 const exerciseRouter = require("./routers/physiotherapy");
 const recipeRouter = require("./routers/recipes");
 const userRouter = require("./routers/user");
-
-console.log(process.env.SECRET_KEY);
+const auth = require("./middleware/auth")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,6 +27,7 @@ app.use(userRouter);
 app.set("view engine", "hbs");
 app.set("views", templates_path);
 hbs.registerPartials(partials_path);
+app.use(cookieParser());
 
 app.get("/", async(request, response) => {
     response.render("home");
@@ -43,7 +42,7 @@ app.get("/signin", async(request, response) => {
     response.render("signin");
 })
 
-app.get("/profile", async(request, response) => {
+app.get("/profile", auth, async(request, response) => {
     response.render("profile");
 })
 
@@ -55,7 +54,8 @@ app.get("/profile", async(request, response) => {
 //     response.render("physiotherapy");
 // })
 
-app.get("/prediction", async(request, response) => {
+app.get("/prediction", auth, async(request, response) => {
+    // console.log(request.cookies.jwt);
     response.render("prediction");
 })
 
