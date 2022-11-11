@@ -439,7 +439,7 @@
             return response.json();
         })
         .then((data)=>{
-            console.log(data);
+        console.log(data);
         document.getElementById("flag").src=data.countryInfo.flag;
         document.getElementById("country").innerHTML=data.country.toLocaleString();
         document.getElementById("cases").innerHTML=data.cases.toLocaleString();

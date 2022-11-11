@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require('mongoose-type-url');
 
-const exerciseSchema = new mongoose.Schema({
+const recipeSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -16,6 +16,6 @@ const exerciseSchema = new mongoose.Schema({
     }
 });
 
-const Exercise = new mongoose.model("Exercise", exerciseSchema);
+const Recipe = new mongoose.model("Recipe", recipeSchema);
 
-module.exports = Exercise;
+module.exports = Recipe;
