@@ -19,7 +19,7 @@ app.set("view engine", "hbs");
 app.set("views", templates_path);
 hbs.registerPartials(partials_path);
 
-router.post("/physiotherapy", auth, async(request, response) => {
+router.post("/physiotherapy", async(request, response) => {
     try {
         const exercise = new Exercise({
             title: request.body.title,
@@ -35,16 +35,16 @@ router.post("/physiotherapy", auth, async(request, response) => {
     }
 })
 
-router.get("/physiotherapy", auth, async(request, response) => {
-    try {
-        const exercise = await Exercise.find();
-        console.log("The success part:\n" + exercise);
-        response.status(200).render("physiotherapy");
-        // response.status(200).send("Successfully Fetched: " + exercise);
-    } catch (e) {
-        console.log(e);
-        response.status(404).send(e);
-    }
-})
+// router.get("/physiotherapy", auth, async(request, response) => {
+//     try {
+//         const exercise = await Exercise.find();
+//         console.log("The success part:\n" + exercise);
+//         response.status(200).render("physiotherapy");
+//         // response.status(200).send("Successfully Fetched: " + exercise);
+//     } catch (e) {
+//         console.log(e);
+//         response.status(404).send(e);
+//     }
+// })
 
 module.exports = router;

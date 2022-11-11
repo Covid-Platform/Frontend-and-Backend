@@ -34,15 +34,15 @@ router.post("/recipe", auth, async(request, response) => {
     }
 })
 
-router.get("/recipe", auth, async(request, response) => {
-    try {
-        const recipe = await Recipe.find();
-        console.log("The success part:\n" + recipe);
-        // response.status(200).send("Successfully Fetched:\n" + recipe);
-        response.status(200).render("recipe");
-    } catch (e) {
-        response.status(404).send(e);
-    }
-})
+// router.get("/recipe", auth, async(request, response) => {
+//     try {
+//         const recipe = await Recipe.find();
+//         console.log("The success part:\n" + recipe);
+//         // response.status(200).send("Successfully Fetched:\n" + recipe);
+//         response.status(200).render("recipe");
+//     } catch (e) {
+//         response.status(404).send(e);
+//     }
+// })
 
 module.exports = router;

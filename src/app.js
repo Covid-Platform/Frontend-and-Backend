@@ -7,6 +7,9 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const port = process.env.PORT || 8002;
 
+const Exercise = require("./models/exercise");
+const Recipe = require("./models/recipes");
+
 const static_path = path.join(__dirname, "../public");
 const templates_path = path.join(__dirname, "../templates/views");
 const partials_path = path.join(__dirname, "../templates/partials");
@@ -46,17 +49,32 @@ app.get("/profile", auth, async(request, response) => {
     response.render("profile");
 })
 
-// app.get("/recipe", async(request, response) => {
-//     response.render("recipe");
-// })
-
-// app.get("/physiotherapy", async(request, response) => {
-//     response.render("physiotherapy");
-// })
-
 app.get("/prediction", auth, async(request, response) => {
     // console.log(request.cookies.jwt);
     response.render("prediction");
+})
+
+app.get("/physiotherapy", auth, async(request, response) => {
+    try {
+        const exercise = await Exercise.find();
+        console.log("The success part:\n" + exercise);
+        response.status(200).render("physiotherapy");
+        // response.status(200).send("Successfully Fetched: " + exercise);
+    } catch (e) {
+        console.log(e);
+        response.status(404).send(e);
+    }
+})
+
+app.get("/recipe", auth, async(request, response) => {
+    try {
+        const recipe = await Recipe.find();
+        console.log("The success part:\n" + recipe);
+        // response.status(200).send("Successfully Fetched:\n" + recipe);
+        response.status(200).render("recipe");
+    } catch (e) {
+        response.status(404).send(e);
+    }
 })
 
 app.get("/logout", auth, async (request, response) => {
