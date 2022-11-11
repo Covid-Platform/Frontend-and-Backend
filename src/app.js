@@ -59,6 +59,19 @@ app.get("/prediction", auth, async(request, response) => {
     response.render("prediction");
 })
 
+app.get("/logout", auth, async (request, response) => {
+    try{
+        console.log(request.user);
+        response.clearCookie("jwt");
+        console.log("Logout Successfully");
+
+        await request.user.save();
+        response.render("Home");
+    } catch(error) {
+
+    }
+})
+
 app.listen(port, () => {
     console.log(`The connection is setup at ${port}`);
 })
