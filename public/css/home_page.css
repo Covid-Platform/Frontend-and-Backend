@@ -127,7 +127,9 @@ header.sticky {
     background: var(--dark-blue);
 }
 
-.tracker .container {
+
+
+/* .tracker .container {
     z-index: 1;
     width: 90%;
     margin: 0 auto;
@@ -200,7 +202,7 @@ img#flag {
 .tracker .container .card i {
     font-size: 3rem;
     align-items: center;
-}
+} */
 
 @media screen and (max-width: 768px) {
     .board {
