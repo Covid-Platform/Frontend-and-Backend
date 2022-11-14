@@ -19,20 +19,23 @@ app.set("view engine", "hbs");
 app.set("views", templates_path);
 hbs.registerPartials(partials_path);
 
-router.post("/signup", async(request, response) => {
+router.post("/signup", async (request, response) => {
     try {
+        console.log("Hello");
         const password = request.body.password;
         const confirmPassword = request.body.confirmPassword;
+        console.log(request.body.gender);
 
         if (password === confirmPassword) {
             const registerUser = new User({
                 email: request.body.email,
                 password: request.body.password,
-                fullName: undefined,
-                contactNumber: undefined,
-                dob: undefined,
-                address: undefined,
-                gender: undefined
+                fullName: request.body.fullName,
+                contactNumber: request.body.contactNumber,
+                dob: request.body.dob,
+                address: request.body.address,
+                gender: request.body.gender,
+                vaccineStatus: request.body.vaccineStatus == "Vaccinated with Dose 1" ? "1" : request.body.vaccineStatus == "Vaccinated with Dose 2" ? "2" : request.body.vaccineStatus
             });
 
             console.log("The success part: " + registerUser);
@@ -58,7 +61,7 @@ router.post("/signup", async(request, response) => {
 })
 
 
-router.post("/signin", async(request, response) => {
+router.post("/signin", async (request, response) => {
     try {
         const email = request.body.email;
         const password = request.body.password;

@@ -28,12 +28,15 @@ const userSchema = new mongoose.Schema({
         minlength: 10,
     },
     dob: {
-        type: Date,
+        type: String,
     },
     address: {
         type: String,
     },
     gender: {
+        type: String
+    },
+    vaccineStatus: {
         type: String
     },
     tokens: [{

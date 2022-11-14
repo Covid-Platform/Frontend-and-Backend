@@ -38,11 +38,11 @@ app.get("/", async(request, response) => {
 })
 
 app.get("/signup", async(request, response) => {
-    response.render("signup");
+    response.render("registration");
 })
 
 app.get("/signin", async(request, response) => {
-    response.render("signin");
+    response.render("login");
 })
 
 app.get("/profile", auth, async(request, response) => {
