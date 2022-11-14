@@ -60,3 +60,13 @@ img#flag {
   font-size: 3rem;
   align-items: center;
 }
+@media screen and (max-width:768px){
+  .board{
+    column-count: 2;
+  }
+}
+@media screen and (max-width:500px){
+  .board{
+    column-count: 1;
+  }
+}
