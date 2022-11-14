@@ -1,79 +1,62 @@
-.tracker *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-  }
-  .tracker body{
-    display: flex;
-    justify-content: center;
-  }
-  .tracker{
-    min-width: 290px;
-    max-width: 900px;
-    margin: 15px 10px;
-    text-align: center;
-    border: 1px solid #777;
-    border-radius: 5px;
-  }
-  .tracker h1{
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  .tracker h2{
-    color: darkblue;
-  }
-  .tracker h3{
-    margin: 10px 0;
-  }
-  .tracker #date{
-    color: teal;
-  }
-  form input,
-  form button{
-    width: 200px;
-    height: 35px;
-    border: 1px solid #ccc;
-    padding: 0 5px;
-    outline: none;
-    cursor: pointer;
-  }
-  form button{
-    width: 70px;
-  }
-  .tracker #name-country{
-    color: #555;
-    margin-top: 20px;
-  }
-  .tracker .content{
-    margin: 10px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    cursor: pointer;
-  }
-  .tracker .content .box{
-    min-width: 270px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    padding: 15px;
-    letter-spacing: 2px;
-  }
-  .tracker .content .box:hover{
-    background: #eee4;
-  }
-  .tracker .content .box p{
-    text-transform: uppercase;
-    opacity: 0.7;
-  }
-  .tracker .confirmed h3,
-  .tracker .confirmed i{
-    color: crimson;
-  }
-  .tracker .recovered h3,
-  .tracker .recovered i{
-    color: green;
-  }
-  .tracker ::-webkit-scrollbar{
-    display: none;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.tracker .container {
+  z-index: 1;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 24px;
+  background: #fff;
+  padding: 2%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.tracker .container .board {
+  column-count: 3;
+  column-gap: 2rem;
+}
+.tracker .container h2 {
+  margin: 0 0 30px;
+  text-align: center;
+}
+img#flag {
+  height: 20px;
+  width: 20px;
+}
+.tracker .container .card {
+  width: 90%;
+  background: #fff;
+  padding: 10%;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  color: #fff;
+}
+.tracker .container .board .card.a {
+  background: #41a7ff;
+}
+.tracker .container .card.cr {
+  background: #ff3434;
+}
+.tracker .container .card.r {
+  background: #32b336;
+}
+.tracker .container .card.ca {
+  background: #d83f3f;
+}
+.tracker .container .card.d {
+  background: #ff0053;
+}
+.tracker .container .card.t {
+  background: #ffa501;
+}
+.tracker .container .card h4 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: justify;
+}
+.tracker .container .card span {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+.tracker .container .card i {
+  font-size: 3rem;
+  align-items: center;
+}
