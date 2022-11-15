@@ -43,15 +43,14 @@
         <div class="img-name">
             <img src="https://p7.hiclipart.com/preview/304/305/226/web-development-computer-icons-avatar-business-user-profile.jpg"
                 alt="profilna">
-            <h2>Name Surname</h2>
+            <h2>{{post.fullName}}</h2>
         </div>
         <div class="followers">
-            <h3>Vaccination Status: 2 Doses</h3>
-            <h3>DOB: 01/03/2002</h3>
-            <h3>Sex: Male</h3>
-            <h3>Contact: 9000000000</h3>
-            <h3>Address: XYZ</h3>
-
+            <h3>Vaccination Status: {{post.vaccineStatus}} Doses</h3>
+            <h3>DOB: {{post.dob}}</h3>
+            <h3>Sex: {{post.gender}}</h3>
+            <h3>Contact: {{post.contactNumber}}</h3>
+            <h3>Address: {{post.address}}</h3>
         </div>
 
         <!-- <div class="button-follow">

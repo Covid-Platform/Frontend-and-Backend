@@ -32,33 +32,48 @@ app.set("views", templates_path);
 hbs.registerPartials(partials_path);
 app.use(cookieParser());
 
-app.get("/", async(request, response) => {
+app.get("/", async (request, response) => {
     response.render("home");
     // response.render("index");
 })
 
-app.get("/signup", async(request, response) => {
+app.get("/signup", async (request, response) => {
     response.render("registration");
 })
 
-app.get("/signin", async(request, response) => {
+app.get("/signin", async (request, response) => {
     response.render("login");
 })
 
-app.get("/profile", auth, async(request, response) => {
-    response.render("profile");
+app.get("/profile", auth, async (request, response) => {
+    response.render("profile", {
+        post: {
+            email: request.user.email,
+            password: request.user.password,
+            fullName: request.user.fullName,
+            contactNumber: request.user.contactNumber,
+            dob: request.user.dob,
+            address: request.user.address,
+            gender: request.user.gender,
+            vaccineStatus: request.user.vaccineStatus
+        }
+    });
 })
 
-app.get("/prediction", auth, async(request, response) => {
+app.get("/prediction", auth, async (request, response) => {
     // console.log(request.cookies.jwt);
     response.render("prediction");
 })
 
-app.get("/physiotherapy", auth, async(request, response) => {
+app.get("/physiotherapy", auth, async (request, response) => {
     try {
         const exercise = await Exercise.find();
         console.log("The success part:\n" + exercise);
-        response.status(200).render("physiotherapy");
+        response.status(200).render("physiotherapy", {
+            post: {
+                exercises: exercise
+            }
+        });
         // response.status(200).send("Successfully Fetched: " + exercise);
     } catch (e) {
         console.log(e);
@@ -66,26 +81,30 @@ app.get("/physiotherapy", auth, async(request, response) => {
     }
 })
 
-app.get("/recipe", auth, async(request, response) => {
+app.get("/recipe", auth, async (request, response) => {
     try {
         const recipe = await Recipe.find();
         console.log("The success part:\n" + recipe);
         // response.status(200).send("Successfully Fetched:\n" + recipe);
-        response.status(200).render("recipe");
+        response.status(200).render("recipe", {
+            post: {
+                recipes: recipe,
+            }
+        });
     } catch (e) {
         response.status(404).send(e);
     }
 })
 
 app.get("/logout", auth, async (request, response) => {
-    try{
+    try {
         console.log(request.user);
         response.clearCookie("jwt");
         console.log("Logout Successfully");
 
         await request.user.save();
         response.render("Home");
-    } catch(error) {
+    } catch (error) {
 
     }
 })
