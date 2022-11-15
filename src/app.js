@@ -37,6 +37,14 @@ app.get("/", async (request, response) => {
     // response.render("index");
 })
 
+app.get("/home", async (request, response) => {
+    response.render("home", {
+        post: {
+            login: true
+        }
+    });
+})
+
 app.get("/signup", async (request, response) => {
     response.render("registration");
 })
@@ -55,14 +63,19 @@ app.get("/profile", auth, async (request, response) => {
             dob: request.user.dob,
             address: request.user.address,
             gender: request.user.gender,
-            vaccineStatus: request.user.vaccineStatus
+            vaccineStatus: request.user.vaccineStatus,
+            login: true
         }
     });
 })
 
 app.get("/prediction", auth, async (request, response) => {
     // console.log(request.cookies.jwt);
-    response.render("prediction");
+    response.render("prediction", {
+        post: {
+            login: true
+        }
+    });
 })
 
 app.get("/physiotherapy", auth, async (request, response) => {
@@ -71,7 +84,8 @@ app.get("/physiotherapy", auth, async (request, response) => {
         console.log("The success part:\n" + exercise);
         response.status(200).render("physiotherapy", {
             post: {
-                exercises: exercise
+                exercises: exercise,
+                login: true
             }
         });
         // response.status(200).send("Successfully Fetched: " + exercise);
@@ -89,6 +103,7 @@ app.get("/recipe", auth, async (request, response) => {
         response.status(200).render("recipe", {
             post: {
                 recipes: recipe,
+                login: true
             }
         });
     } catch (e) {
@@ -103,7 +118,11 @@ app.get("/logout", auth, async (request, response) => {
         console.log("Logout Successfully");
 
         await request.user.save();
-        response.render("Home");
+        response.render("home", {
+            post: {
+                login: false
+            }
+        });
     } catch (error) {
 
     }

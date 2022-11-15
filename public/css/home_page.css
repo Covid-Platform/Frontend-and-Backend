@@ -89,6 +89,11 @@ header.sticky {
     display: none;
 }
 
+.invisible {
+    display: none;
+    visibility: hidden;
+       }
+
 .home {
     background: url("../images/home_page.jpg") no-repeat;
     background-size: cover;

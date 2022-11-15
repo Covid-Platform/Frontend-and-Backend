@@ -15,7 +15,13 @@ const auth = async (request, response, next) => {
         next();
     } catch (error) {
         console.log(error);
-        response.status(400).send("User is not logged in.")
+        // response.status(400).send("User is not logged in.")
+        response.render("home", {
+            post: {
+                errorMessage: "User is not logged in",
+                login: false
+            }
+        })
     }
 }
 

@@ -51,9 +51,17 @@ router.post("/signup", async (request, response) => {
 
             const createUser = await registerUser.save();
             console.log(createUser);
-            response.status(201).render("home");
+            response.status(201).render("home", {
+                post: {
+                    login: true
+                }
+            });
         } else {
-            response.send("Password doesn't match.")
+            response.render("registration", {
+                post: {
+                    errorMessage: "Confirm Password doesn't match with password",
+                }
+            })
         }
     } catch (e) {
         response.status(404).send(e);
@@ -78,10 +86,21 @@ router.post("/signin", async (request, response) => {
             secure: true,
         });
 
+        console.log(status);
+
         if (status) {
-            response.status(200).render("home");
+            response.status(200).render("home", {
+                post: {
+                    login: true
+                }
+            });
         } else {
-            response.status(200).send("Password is not matching");
+            console.log(status);
+            response.render("login", {
+                post: {
+                    errorMessage: "Wrong Paasword"
+                }
+            });
         }
     } catch (e) {
         response.status(404).send(e);

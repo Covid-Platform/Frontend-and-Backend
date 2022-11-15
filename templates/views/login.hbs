@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id='status' class='invisible'>{{post.errorMessage}}</div>
     <div class="wrapper">
         <h2>Login</h2>
         <form action="/signin" method="POST">
@@ -29,6 +30,13 @@
             </div>
         </form>
     </div>
+    <script>
+        console.log({{post.errorMessage}})
+        if ($('div#status').text() != '') {
+            console.log({{post.errorMessage}})
+            alert($('div#status').text());
+        }
+    </script>
 </body>
 
 </html>

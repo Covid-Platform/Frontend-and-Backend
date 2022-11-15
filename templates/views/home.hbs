@@ -18,31 +18,8 @@
 <body>
 
     <!-- header section starts  -->
-
-    <header>
-
-        <a href="#" class="logo">c<span class="fas fa-virus"></span>vid-19</a>
-
-        <div id="menu" class="fas fa-bars"></div>
-
-        <nav class="navbar">
-            <a class="tactive" href="#home">home</a>
-            {{!-- <a href="#tracker">tracker</a>
-            <a href="#prevent">prevent</a>
-            <a href="#symptoms">symptoms</a>
-            <a href="#precautions">precautions</a>
-            <a href="#doctor">doctor</a>
-            <a href="#hand-wash">hand wash</a> --}}
-            <a href="/physiotherapy">exercises</a>
-            <a href="/recipe">recipes</a>
-            <a href="/prediction">prediction</a>
-            <a href="/signin">Login</a>
-            <a href="/logout">Log Out</a>
-            <a href="/profile"> <i class="fa-solid fa-user"></i> </a>
-        </nav>
-        {{!-- {{>navbar}} --}}
-
-    </header>
+    <div id='status' class='invisible'>{{post.errorMessage}}</div>
+    {{>navbar}}
 
     <!-- header section ends -->
 
@@ -63,16 +40,28 @@
     <!-- tracker section starts here -->
     <section class="tracker" id="tracker">
         <div class="container">
-      <h2>COVID -19 Cases Globally</h2>
-      <div class="board">
-        <div class="card a"><i class="fa fa-virus"></i><h4>Active Cases</h4><span id="active"></span></div>
-        <div class="card ca"><i class="fa fa-th-list"></i><h4>Total Cases</h4><span id="cases"></span></div>
-        <div class="card cr"><i class="fa fa-times-circle"></i><h4>New deaths</h4><span id="new"></span></div>
-        <div class="card d"><i class="fa fa-times"></i><h4>Total Deaths</h4><span id="death"></span></div>
-        <div class="card r"><i class="fa fa-bars"></i><h4>Recovered Cases</h4><span id="recovered"></span></div>
-        <div class="card t"><i class="fa fa-eye"></i><h4>Total Recovered</h4><span id="tests"></span></div>
-      </div>
-    </div>
+            <h2>COVID -19 Cases Globally</h2>
+            <div class="board">
+                <div class="card a"><i class="fa fa-virus"></i>
+                    <h4>Active Cases</h4><span id="active"></span>
+                </div>
+                <div class="card ca"><i class="fa fa-th-list"></i>
+                    <h4>Total Cases</h4><span id="cases"></span>
+                </div>
+                <div class="card cr"><i class="fa fa-times-circle"></i>
+                    <h4>New deaths</h4><span id="new"></span>
+                </div>
+                <div class="card d"><i class="fa fa-times"></i>
+                    <h4>Total Deaths</h4><span id="death"></span>
+                </div>
+                <div class="card r"><i class="fa fa-bars"></i>
+                    <h4>Recovered Cases</h4><span id="recovered"></span>
+                </div>
+                <div class="card t"><i class="fa fa-eye"></i>
+                    <h4>Total Recovered</h4><span id="tests"></span>
+                </div>
+            </div>
+        </div>
     </section>
 
     {{!--<section class="tracker" id="tracker">
@@ -508,21 +497,25 @@
 
     <script>
         fetch('https://api.covid19api.com/summary')
-.then((response) => {
-  return response.json();
-})
-.then((data) => {
-  console.log(data);
-  //const deaths = document.querySelector('.deaths');
-///const recovered = document.querySelector('.recovered');
-document.getElementById("active").innerHTML = data.Global.NewConfirmed.toLocaleString();
-document.getElementById("cases").innerHTML = data.Global.TotalConfirmed.toLocaleString();
- document.getElementById("new").innerHTML = data.Global.NewDeaths.toLocaleString();
- document.getElementById("death").innerHTML = data.Global.TotalDeaths.toLocaleString();
- document.getElementById("recovered").innerHTML = data.Global.NewRecovered.toLocaleString();
- document.getElementById("tests").innerHTML = data.Global.TotalRecovered.toLocaleString();
-//document.getElementById("flag").src = data.Global.Countries;
-});
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log(data);
+                //const deaths = document.querySelector('.deaths');
+                ///const recovered = document.querySelector('.recovered');
+                document.getElementById("active").innerHTML = data.Global.NewConfirmed.toLocaleString();
+                document.getElementById("cases").innerHTML = data.Global.TotalConfirmed.toLocaleString();
+                document.getElementById("new").innerHTML = data.Global.NewDeaths.toLocaleString();
+                document.getElementById("death").innerHTML = data.Global.TotalDeaths.toLocaleString();
+                document.getElementById("recovered").innerHTML = data.Global.NewRecovered.toLocaleString();
+                document.getElementById("tests").innerHTML = data.Global.TotalRecovered.toLocaleString();
+                //document.getElementById("flag").src = data.Global.Countries;
+            });
+
+        if ($('div#status').text() != '') {
+            alert($('div#status').text());
+        }
     </script>
 
 
