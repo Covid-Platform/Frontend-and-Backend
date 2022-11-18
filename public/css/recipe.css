@@ -28,7 +28,7 @@ html {
 }
 
 section {
-  min-height: 2vh;
+  min-height: 10vh;
   padding: 1rem 9%;
   padding-top: 8rem;
 }
@@ -52,6 +52,8 @@ header {
   left: 0;
   z-index: 1000;
   padding: 2rem;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 header .logo {
@@ -83,12 +85,13 @@ header.sticky {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-#menu {
+/*#menu {
   font-size: 3rem;
   color: var(--blue);
   cursor: pointer;
   display: none;
-}
+}*/
+
 @media (max-width: 1200px) {
     html {
       font-size: 55%;
@@ -102,51 +105,51 @@ header.sticky {
     }
 }
   
-    #menu {
-      display: block;
-    }
+#menu {
+  display: none;
+}
   
-    header .navbar {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: #fff;
-      padding: 2rem;
-      border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
-      transform-origin: top;
-      transform: scaleY(0);
-      opacity: 0;
-    }
+/*header .navbar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 2rem;
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+  }
   
-    header .navbar.nav-toggle {
-      transform: scaleY(1);
-      opacity: 1;
-    }
+  header .navbar.nav-toggle {
+    transform: scaleY(1);
+    opacity: 1;
+  }
   
-    header .navbar a {
-      display: block;
-      margin: 1.5rem 0;
-      font-size: 2rem;
-    }
+  header .navbar a {
+    display: block;
+    margin: 1.5rem 0;
+    font-size: 2rem;
+  }
   
-    .fa-times {
-      transform: rotate(180deg);
-    }
-    .home .content {
-        text-align: center;
-        padding-top: 3rem;
-    }
+  .fa-times {
+    transform: rotate(180deg);
+  }*/
+  .home .content {
+    text-align: center;
+    padding-top: 3rem;
+  }
       
-    .home .content h1 {
-        font-size: 5rem;
-        color: var(--dark-blue);
-    }
+  .home .content h1 {
+    font-size: 5rem;
+    color: var(--dark-blue);
+  }
 
-    .home .content p {
-        font-size: 2rem;
-        padding-top: 3rem;
-    }
+  .home .content p {
+    font-size: 2rem;
+    padding-top: 3rem;
+  }
 
     .recipe .box-container {
       display: flex;
@@ -183,3 +186,42 @@ header.sticky {
       .recipe .box-container .container .ul {
         font-size: 2rem;
       }
+      @media (max-width: 991px) {
+        section {
+            padding: 1rem 3%;
+            padding-top: 8rem;
+        }
+        #menu {
+            display: block;
+        }
+        header .navbar {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            padding: 2rem;
+            border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+            transform-origin: top;
+            transform: scaleY(0);
+            opacity: 0;
+        }
+        header .navbar.nav-toggle {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+        header .navbar a {
+            display: block;
+            margin: 1.5rem 0;
+            font-size: 2rem;
+        }
+        .fa-times {
+            transform: rotate(180deg);
+        }
+        .symptoms .column .main-image img {
+            display: none;
+        }
+        .hand-wash .column .main-image img {
+            display: none;
+        }
+    }
