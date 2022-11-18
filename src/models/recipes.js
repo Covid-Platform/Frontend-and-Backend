@@ -13,7 +13,15 @@ const recipeSchema = new mongoose.Schema({
     image: {
         type: mongoose.SchemaTypes.Url,
         required: true
-    }
+    },
+    ingredients: [{
+        type: String,
+            required: true
+    }],
+    steps: [{
+        type: String,
+            required: true
+    }]
 });
 
 const Recipe = new mongoose.model("Recipe", recipeSchema);

@@ -37,7 +37,7 @@ app.get("/", async (request, response) => {
     // response.render("index");
 })
 
-app.get("/home", async (request, response) => {
+app.get("/home", auth, async (request, response) => {
     response.render("home", {
         post: {
             login: true

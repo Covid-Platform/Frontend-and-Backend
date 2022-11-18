@@ -16,15 +16,20 @@
 </head>
 
 <body>
+    {{!-- <div >marked.parse('# Marked in the browser\n\nRendered by **marked**.')</div>
+    <span style="display:block">It **works!**</span>
+    <div id="content"></div> --}}
 
     <!-- header section starts  -->
     <div id='status' class='invisible'>{{post.errorMessage}}</div>
+    {{!-- <div id='login' class='invisible'>{{post.login}}</div>
+    <div>{{post.login}}</div>
+    {{filter "## Hello *World*!" "markdown"}}  --}}
     {{>navbar}}
 
     <!-- header section ends -->
 
     <!-- home section starts  -->
-
     <section class="home" id="home">
 
         <div class="content">
@@ -517,6 +522,11 @@
             alert($('div#status').text());
         }
     </script>
+    {{!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+    document.getElementById('content').innerHTML =
+      marked.parse($('div#login').text());
+  </script> --}}
 
 
 </body>

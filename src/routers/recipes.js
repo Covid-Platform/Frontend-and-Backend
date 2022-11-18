@@ -23,7 +23,9 @@ router.post("/recipe", auth, async(request, response) => {
         const recipe = new Recipe({
             title: request.body.title,
             description: request.body.description,
-            image: request.body.image
+            image: request.body.image,
+            steps: request.body.steps,
+            ingredients: request.body.ingredients
         });
         console.log("The success part: " + recipe);
         const createRecipe = await recipe.save();

@@ -24,7 +24,8 @@ router.post("/physiotherapy", async(request, response) => {
         const exercise = new Exercise({
             title: request.body.title,
             description: request.body.description,
-            image: request.body.image
+            image: request.body.image,
+            steps: request.body.steps
         });
         console.log("The success part: " + exercise);
         const createExercise = await exercise.save();

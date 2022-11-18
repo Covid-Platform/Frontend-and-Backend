@@ -13,7 +13,11 @@ const exerciseSchema = new mongoose.Schema({
     image: {
         type: mongoose.SchemaTypes.Url,
         required: true
-    }
+    },
+    steps: [{
+        type: String,
+            required: true
+    }]
 });
 
 const Exercise = new mongoose.model("Exercise", exerciseSchema);
