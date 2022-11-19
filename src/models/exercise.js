@@ -15,8 +15,7 @@ const exerciseSchema = new mongoose.Schema({
         required: true
     },
     steps: [{
-        type: String,
-            required: true
+        type: String
     }]
 });
 

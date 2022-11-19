@@ -18,7 +18,7 @@ app.set("view engine", "hbs");
 app.set("views", templates_path);
 hbs.registerPartials(partials_path);
 
-router.post("/recipe", auth, async(request, response) => {
+router.post("/recipe", async(request, response) => {
     try {
         const recipe = new Recipe({
             title: request.body.title,
