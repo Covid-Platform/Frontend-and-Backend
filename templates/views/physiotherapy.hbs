@@ -46,147 +46,26 @@
         <h1 class="heading" style="margin-top: 50px;"> The Best Breathing Exercises for COVID-19 </h1>
 
         <div class="box-container">
-
+            {{#each post.exercises}}
             <div class="box">
-                <img src="https://static.toiimg.com/thumb/82455348.cms?width=680&height=512&imgsize=88456" alt="image"
-                    width="640px" height="425px">
+                <img src={{this.image}} alt="image" width="640px" height="425px">
                 <div class="box-inner">
-                    <h2>Qigong belly breathing (diaphragmatic breathing)</h2>
-                    <p>Doing this exercise helps improve the function of the diaphragm and get more air to the base of
-                        the lungs, facilitating easy breathing. <br><br>
+                    <h2>{{this.title}}</h2>
+                    <p>{{this.description}}<br><br>
                         Here’s how to do it:<br>
                     <ol>
-                        <li>You can do this exercise while sitting or lying down.</li>
-                        <li>Relax your face, neck, jaw, and shoulder muscles.</li>
-                        <li>Rest the tip of your tongue behind your top front teeth.</li>
-                        <li>Straighten your back.</li>
-                        <li>Close your eyes.</li>
-                        <li>Breathe normally for several minutes.</li>
-                        <li>Place one hand on your chest and one on your lower abdomen.</li>
-                        <li>Breathe deeply through your nose, feeling your chest and ribs expand when you inhale. Your
-                            stomach should expand outward against your hand.</li>
-                        <li>Exhale, feeling your stomach gently contract inward.</li>
-                        <li>Breath slowly and deeply in this manner nine to 10 times.</li>
+                        {{!-- <li>{{}}</li> --}}
+                        {{#each this.steps}}
+                        <li>{{this}}</li>
+                        {{/each}}
                     </ol>
                     </p>
                 </div>
             </div>
-
-            <div class="box">
-                <img src="https://static.toiimg.com/thumb/82455312.cms?width=680&height=512&imgsize=78289" alt="image"
-                    width="640px" height="425px">
-                <div class="box-inner">
-                    <h2>Pursed lip breathing</h2>
-                    <p>Pursed lip breathing gets more oxygen into your lungs than regular breathing can. It also keeps
-                        your airways open longer by reducing the number of breaths you take per minute.
-                        <br><br>
-                        Follow these steps to try pursed lip breathing:<br>
-                    <ol>
-                        <li>Relax in a seated position with your neck and shoulder muscles unclenched.</li>
-                        <li>Breathe in slowly through your nose for several counts with your mouth closed. (Your nose
-                            warms and humidifies the air before it reaches the lungs — breathing in through your mouth
-                            does not do this.)</li>
-                        <li>Before exhaling, purse your lips, as if you were going to blow out a candle.</li>
-                        <li>Keeping your lips pursed, breathe out all the air in your lungs slowly.</li>
-                        <li>Try to exhale for a longer number of counts than you inhaled.</li>
-                        <li>Repeat several times.</li>
-                    </ol>
-                    </p>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="https://static.toiimg.com/thumb/82455202.cms?width=680&height=512&imgsize=79378" alt="image"
-                    width="640px" height="425px">
-                <div class="box-inner">
-                    <h2>Anulom Vilom (Alternate Nostril Breathing)</h2>
-                    <p>Anulom Vilom helps purify toxins from the lungs, gets rid of excess fluid build-up and regulates
-                        flow of oxygenated blood in the lungs. It's also a great way to boost immunity and lung
-                        capacity.<br><br>
-                        Here’s how to do it:<br>
-                    <ol>
-                        <li>Choose a meditation sitting pose. Keep your spine and neck straight and close your eyes.
-                        </li>
-                        <li>Clear your mind of everything outside of this moment.</li>
-                        <li>Start with your outer wrists resting on your knees.</li>
-                        <li>Using your right hand, fold your middle and index fingers toward your palm.</li>
-                        <li>Place your thumb on your right nostril and your ring finger on the left nostril.</li>
-                        <li>Close your right nostril with your thumb and inhale through your left nostril, slowly and
-                            deeply, until your lungs are full. Focus on your breathing.</li>
-                        <li>Next, release your thumb and close your left nostril with your ring finger.</li>
-                        <li>Exhale slowly through the right nostril.</li>
-                        <li>Now do it in reverse, this time inhaling through the right nostril and exhaling through the
-                            left.</li>
-                    </ol>
-                    </p>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="https://static.toiimg.com/thumb/82455274.cms?width=680&height=512&imgsize=229598" alt="image"
-                    width="640px" height="425px">
-                <div class="box-inner">
-                    <h2>Yawn to a smile</h2>
-                    <p>This breathing exercise opens up the muscles in the chest, which allows the diaphragm to fully
-                        expand. It also strengthens the arms and shoulder muscles.
-                        <br><br>
-                        Here’s how to do it:<br>
-                    <ol>
-                        <li>Sit upright with a straight back.</li>
-                        <li>Stretch your arms up to shoulder height. You should feel the muscles in your back
-                            stretching.</li>
-                        <li>While your arms are at shoulder height, open your mouth wide, as if you were yawning.</li>
-                        <li>Bring your arms back to rest on your thighs while turning your yawn into a smile.</li>
-                    </ol>
-                    </p>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="https://a3n6a4t2.rocketcdn.me/wp-content/uploads/bhramari-pranayama-benefits.jpg" alt="image"
-                    width="565px" height="425px">
-                <div class="box-inner">
-                    <h2>Humming while exhaling</h2>
-                    <p>Humming, such as the chanting of “om” in yoga, can help pull oxygen into the lungs with each
-                        breath. Many also find it can be calming.
-                        <br><br>
-                        Here are the steps for this exercise:<br>
-                    <ol>
-                        <li>Sit upright with a straight back.</li>
-                        <li>Place each hand on the sides of your lower abdomen.</li>
-                        <li>Keep your lips closed and gently rest your tongue on the roof of your mouth.</li>
-                        <li>Breathe deeply and slowly through your nose, keeping your lips closed and your tongue in
-                            position.</li>
-                        <li>Allow your fingers to spread wide on your stomach as it expands.</li>
-                        <li>Keep your shoulders relaxed. Do not let them rise.</li>
-                        <li>Once your lungs feel full, exhale while humming. Make sure to keep your lips closed.</li>
-                        <li>Repeat for several breaths.</li>
-                    </ol>
-                    </p>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="https://static.toiimg.com/thumb/82455399.cms?width=680&height=512&imgsize=276986" alt="image"
-                    width="640px" height="425px">
-                <div class="box-inner">
-                    <h2>Pranayama</h2>
-                    <p>Pranayama is one of the best breathing exercises to improve lung capacity, boost immunity as well
-                        as soothe the nerves by regulating your breathing. It is ideal to have an empty stomach.
-                        <br><br>
-                        To perform pranayama, start by sitting in a cross-legged position or kneel down on the
-                        ground.With shoulders over the hips and head elevated over the shoulders, extend your body a
-                        little. Now, inhale a deep breath which stretches to the spine and then slowly exhale. Stay in
-                        this position for at least 10 breaths.
-                    </p>
-                </div>
-            </div>
+            {{/each}}
 
         </div>
 
     </section>
 
     <!-- exercise section ends here -->
-
-
-    
