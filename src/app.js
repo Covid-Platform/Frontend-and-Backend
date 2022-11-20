@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const hbs = require("hbs");
 const cookieParser = require('cookie-parser');
+let {PythonShell} = require('python-shell')
+
 
 const app = express();
 const port = process.env.PORT || 8002;
@@ -71,11 +73,32 @@ app.get("/profile", auth, async (request, response) => {
 
 app.get("/prediction", auth, async (request, response) => {
     // console.log(request.cookies.jwt);
+    // PythonShell.run("src/ml/covid_prediction.py", null, (error, result) => {
+    //     console.log(result);
+    //     if(error) console.log(error);
+    //     console.log("Python Script finished");
+    // })
     response.render("prediction", {
         post: {
             login: true
         }
     });
+})
+
+app.post("/prediction", auth, async (request, response) => {
+    options = {
+        args : [request.body.gender]
+    }
+    console.log(request.body.gender);
+    PythonShell.run("src/ml/covid_prediction.py", options, (error, result) => {
+        console.log(result);
+        if(error) console.log(error);
+        console.log("Python Script finished");
+    })
+})
+
+app.get("/predict", async (request, response) => {
+    response.send("Hello");
 })
 
 app.get("/physiotherapy", auth, async (request, response) => {
