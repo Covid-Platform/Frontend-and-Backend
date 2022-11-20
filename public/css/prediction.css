@@ -167,7 +167,7 @@ header.sticky {
     padding: 10px;
 }*/
 body{
-  height: 250vh;
+  height: 260vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,8 +233,9 @@ form .input-box span.details{
   font-weight: 500;
  }
  form .category{
-   display: flex;
-   width: 80%;
+  display: inline-flexbox;
+  column-count: 2;
+   width: 140%;
    margin: 14px 0 ;
    justify-content: space-between;
  }
@@ -248,7 +249,7 @@ form .input-box span.details{
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right:10px;
   background: #d9d9d9;
   border: 5px solid transparent;
   transition: all 0.3s ease;
@@ -280,7 +281,13 @@ form .input-box span.details{
  #dot-25:checked ~ .category label .twentyfive,
  #dot-26:checked ~ .category label .twentysix,
  #dot-27:checked ~ .category label .twentyseven,
- #dot-28:checked ~ .category label .twentyeight{
+ #dot-28:checked ~ .category label .twentyeight,
+ #dot-28:checked ~ .category label .twentynine,
+ #dot-28:checked ~ .category label .thirty,
+ #dot-28:checked ~ .category label .thirtyone,
+ #dot-28:checked ~ .category label .thirtytwo,
+ #dot-28:checked ~ .category label .thirtythree,
+ #dot-28:checked ~ .category label .thirtyfour{
    background: #3c6382;
    border-color: #d9d9d9;
  }
