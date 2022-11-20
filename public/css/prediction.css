@@ -239,7 +239,7 @@ form .input-box span.details{
    justify-content: space-between;
  }
  form .category label{
-   display: block;
+   display: flex;
    align-items: center;
    cursor: pointer;
    font-size: 14px;
@@ -255,7 +255,32 @@ form .input-box span.details{
 }
  #dot-1:checked ~ .category label .one,
  #dot-2:checked ~ .category label .two,
- #dot-3:checked ~ .category label .three{
+ #dot-3:checked ~ .category label .three,
+ #dot-4:checked ~ .category label .four,
+ #dot-5:checked ~ .category label .five,
+ #dot-6:checked ~ .category label .six,
+ #dot-7:checked ~ .category label .seven,
+ #dot-8:checked ~ .category label .eight,
+ #dot-9:checked ~ .category label .nine,
+ #dot-10:checked ~ .category label .ten,
+ #dot-11:checked ~ .category label .eleven,
+ #dot-12:checked ~ .category label .twelve,
+ #dot-13:checked ~ .category label .thirteen,
+ #dot-14:checked ~ .category label .fourteen,
+ #dot-15:checked ~ .category label .fifteen,
+ #dot-16:checked ~ .category label .sixteen,
+ #dot-17:checked ~ .category label .seventeen,
+ #dot-18:checked ~ .category label .eighteen,
+ #dot-19:checked ~ .category label .nineteen,
+ #dot-20:checked ~ .category label .twenty,
+ #dot-21:checked ~ .category label .twentyone,
+ #dot-22:checked ~ .category label .twentytwo,
+ #dot-23:checked ~ .category label .twentythree,
+ #dot-24:checked ~ .category label .twentyfour,
+ #dot-25:checked ~ .category label .twentyfive,
+ #dot-26:checked ~ .category label .twentysix,
+ #dot-27:checked ~ .category label .twentyseven,
+ #dot-28:checked ~ .category label .twentyeight{
    background: #3c6382;
    border-color: #d9d9d9;
  }
