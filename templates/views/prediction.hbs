@@ -25,7 +25,7 @@
     <div class="container">
     <div class="title">Fill in the details</div>
     <div class="content">
-      <form action="/predict" method="POST">
+      <form action="/prediction" method="POST">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Name</span>
@@ -45,8 +45,8 @@
           </div>
         </div>
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-1" value = "2">
+          <input type="radio" name="gender" id="dot-2" value = "1">
           <span class="gender-title">Sex</span>
           <div class="category">
             <label for="dot-1">
@@ -61,8 +61,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="patienttype" id="dot-3">
-          <input type="radio" name="patienttype" id="dot-4">
+          <input type="radio" name="patientType" id="dot-3" value = "2">
+          <input type="radio" name="patientType" id="dot-4" value = "1">
           <span class="gender-title">Patient type</span>
           <div class="category">
             <label for="dot-3">
@@ -77,8 +77,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="intubed" id="dot-5">
-          <input type="radio" name="intubed" id="dot-6">
+          <input type="radio" name="intubed" id="dot-5" value = "1">
+          <input type="radio" name="intubed" id="dot-6" value = "2">
           <span class="gender-title">Intubed</span>
           <div class="category">
             <label for="dot-5">
@@ -93,8 +93,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="pneumonia" id="dot-7">
-          <input type="radio" name="pneumonia" id="dot-8">
+          <input type="radio" name="pneumonia" id="dot-7" value = "1">
+          <input type="radio" name="pneumonia" id="dot-8" value = "2" >
           <span class="gender-title">Pneumonia</span>
           <div class="category">
             <label for="dot-7">
@@ -110,8 +110,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="pregnant" id="dot-9">
-          <input type="radio" name="pregnant" id="dot-10">
+          <input type="radio" name="pregnancy" id="dot-9" value = "1">
+          <input type="radio" name="pregnancy" id="dot-10" value = "2">
           <span class="gender-title">Pregnant</span>
           <div class="category">
             <label for="dot-9">
@@ -127,8 +127,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="diabetes" id="dot-11">
-          <input type="radio" name="diabetes" id="dot-12">
+          <input type="radio" name="diabetes" id="dot-11" value = "1">
+          <input type="radio" name="diabetes" id="dot-12" value = "2">
           <span class="gender-title">Diabetes</span>
           <div class="category">
             <label for="dot-11">
@@ -144,8 +144,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="copd" id="dot-13">
-          <input type="radio" name="copd" id="dot-14">
+          <input type="radio" name="copd" id="dot-13" value = "1">
+          <input type="radio" name="copd" id="dot-14" value = "2">
           <span class="gender-title">Copd</span>
           <div class="category">
             <label for="dot-13">
@@ -161,8 +161,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="asthma" id="dot-15">
-          <input type="radio" name="asthma" id="dot-16">
+          <input type="radio" name="asthma" id="dot-15" value = "1">
+          <input type="radio" name="asthma" id="dot-16" value = "2">
           <span class="gender-title">Asthma</span>
           <div class="category">
             <label for="dot-15">
@@ -178,8 +178,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="immunosuppressed" id="dot-17">
-          <input type="radio" name="immunosuppressed" id="dot-18">
+          <input type="radio" name="immunosuppressed" id="dot-17" value = "1">
+          <input type="radio" name="immunosuppressed" id="dot-18" value = "2">
           <span class="gender-title">immunosuppressed</span>
           <div class="category">
             <label for="dot-17">
@@ -195,8 +195,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="Hypertension" id="dot-19">
-          <input type="radio" name="Hypertension" id="dot-20">
+          <input type="radio" name="hypertension" id="dot-19" value = "1">
+          <input type="radio" name="hypertension" id="dot-20" value = "2">
           <span class="gender-title">Hypertension</span>
           <div class="category">
             <label for="dot-19">
@@ -212,8 +212,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="Cardiovascular" id="dot-21">
-          <input type="radio" name="Cardiovascular" id="dot-22">
+          <input type="radio" name="cardiovascular" id="dot-21" value = "1">
+          <input type="radio" name="cardiovascular" id="dot-22" value = "2">
           <span class="gender-title">Cardiovascular</span>
           <div class="category">
             <label for="dot-21">
@@ -228,8 +228,8 @@
           </div>
         </div>
          <div class="gender-details">
-          <input type="radio" name="Obesity" id="dot-23">
-          <input type="radio" name="Obesity" id="dot-24">
+          <input type="radio" name="obesity" id="dot-23" value = "1">
+          <input type="radio" name="obesity" id="dot-24" value = "2">
           <span class="gender-title">Obesity</span>
           <div class="category">
             <label for="dot-23">
@@ -245,8 +245,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="RenalChronic" id="dot-25">
-          <input type="radio" name="RenalChronic" id="dot-26">
+          <input type="radio" name="renalChronic" id="dot-25" value = "1">
+          <input type="radio" name="renalChronic" id="dot-26" value = "2">
           <span class="gender-title">Renal Chronic</span>
           <div class="category">
             <label for="dot-25">
@@ -262,8 +262,8 @@
         </div>
         
          <div class="gender-details">
-          <input type="radio" name="Tobacco" id="dot-27">
-          <input type="radio" name="Tobacco" id="dot-28">
+          <input type="radio" name="tobacco" id="dot-27" value = "1">
+          <input type="radio" name="tobacco" id="dot-28" value = "2">
           <span class="gender-title">Tobacco</span>
           <div class="category">
             <label for="dot-27">
@@ -278,8 +278,8 @@
         </div>
 
         <div class="gender-details">
-          <input type="radio" name="contact" id="dot-29">
-          <input type="radio" name="contact" id="dot-30">
+          <input type="radio" name="contact" id="dot-29" value = "1">
+          <input type="radio" name="contact" id="dot-30" value = "2">
           <span class="gender-title">Contact with other covid person</span>
           <div class="category">
             <label for="dot-29">
@@ -294,8 +294,8 @@
         </div>
 
         <div class="gender-details">
-          <input type="radio" name="ICU" id="dot-31">
-          <input type="radio" name="ICU" id="dot-32">
+          <input type="radio" name="icu" id="dot-31"  value = "1">
+          <input type="radio" name="icu" id="dot-32" value = "2">
           <span class="gender-title">Admitted to ICU</span>
           <div class="category">
             <label for="dot-31">
@@ -310,8 +310,8 @@
         </div>
 
         <div class="gender-details">
-          <input type="radio" name="otherdisease" id="dot-33">
-          <input type="radio" name="otherdisease" id="dot-34">
+          <input type="radio" name="otherDisease" id="dot-33" value = "1">
+          <input type="radio" name="otherDisease" id="dot-34" value = "2">
           <span class="gender-title">Other disease</span>
           <div class="category">
             <label for="dot-33">

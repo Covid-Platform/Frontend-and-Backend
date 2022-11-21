@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="css/predict.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  </head>
+  <body>
+
+    <!--Profile card start-->
+    <div class="card">
+      <div class="card-image">
+        <img src="images/glen-carrie-sq0CbO7WOYI-unsplash.jpg" alt="">
+      </div>
+      <div class="profile-image">
+        {{#if post.positive}}
+        <img src="images/sick.png" alt="">
+        {{else}}
+        <img src="images/healthy.png" alt="">
+        {{/if}}
+      </div>
+      <div class="card-content">
+        <h3>{{post.name}}</h3>
+        {{#if post.positive}}
+        <h4> YOU ARE COVID POSITIVE!!! </h4>
+        <p>You need visit a doctor or call your local hospital</p>
+        {{else}}
+        <h4> YOU ARE COVID NEGATIVE!!! </h4>
+        <p>Always visit a doctor if you have any symptoms of a disease or call your local hospital</p>
+        {{/if}}
+        
+      </div>
+      
+    </div>
+    <!--Profile card end-->
+
+  </body>
+</html>

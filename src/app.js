@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const hbs = require("hbs");
 const cookieParser = require('cookie-parser');
-let {PythonShell} = require('python-shell')
+let { PythonShell } = require('python-shell')
 
 
 const app = express();
@@ -86,19 +86,47 @@ app.get("/prediction", auth, async (request, response) => {
 })
 
 app.post("/prediction", auth, async (request, response) => {
-    options = {
-        args : [request.body.gender]
+    try {
+        options = {
+            args: [parseInt(request.body.gender), parseInt(request.body.patientType), parseInt(request.body.intubed), parseInt(request.body.pneumonia), parseInt(request.body.age), parseInt(request.body.pregnancy), parseInt(request.body.diabetes), parseInt(request.body.copd), parseInt(request.body.asthma), parseInt(request.body.immunosuppressed), parseInt(request.body.hypertension), parseInt(request.body.otherDisease), parseInt(request.body.cardiovascular), parseInt(request.body.obesity), parseInt(request.body.renalChronic), parseInt(request.body.tobacco), parseInt(request.body.contact)]
+        }
+        console.log(request.body.gender, request.body.patientType, request.body.intubed, request.body.pneumonia, request.body.age, request.body.pregnancy, request.body.diabetes, request.body.copd, request.body.asthma, request.body.immunosuppressed, request.body.hypertension, request.body.otherDisease, request.body.cardiovascular, request.body.obesity, request.body.renalChronic, request.body.tobacco, request.body.contact);
+        // var testResult;
+        PythonShell.run("src/ml/covid_prediction.py", options, (error, result) => {
+            console.log(result);
+            // testResult = result;
+            if (error)
+                console.log(error);
+            console.log("Python Script finished");
+            Results(result, request.body.name, response);
+        });
+        // if (testResult == '[1]') {
+        //     console.log(testResult);
+        //     console.log("Hello");
+        //     response.status(200).render("predict", {
+        //         post: {
+        //             positive: true,
+        //             name: request.body.name
+        //         }
+        //     })
+        // } else {
+        //     console.log(testResult);
+        //     console.log("Hello1");
+        //     response.status(200).render("predict", {
+        //         post: {
+        //             positive: false,
+        //             name: request.body.name
+        //         }
+        //     })
+        // }
+
+    } catch (e) {
+        response.status(404).send(e);
     }
-    console.log(request.body.gender);
-    PythonShell.run("src/ml/covid_prediction.py", options, (error, result) => {
-        console.log(result);
-        if(error) console.log(error);
-        console.log("Python Script finished");
-    })
 })
 
 app.get("/predict", async (request, response) => {
-    response.send("Hello");
+    response.render("predict");
 })
 
 app.get("/physiotherapy", auth, async (request, response) => {
@@ -154,3 +182,25 @@ app.get("/logout", auth, async (request, response) => {
 app.listen(port, () => {
     console.log(`The connection is setup at ${port}`);
 })
+
+function Results(result, name, response) { 
+    if (result == '[1]') {
+        console.log(result);
+        console.log("Hello");
+        response.status(200).render("predict", {
+            post: {
+                positive: true,
+                name: name
+            }
+        })
+    } else {
+        console.log(result);
+        console.log("Hello1");
+        response.status(200).render("predict", {
+            post: {
+                positive: false,
+                name: name
+            }
+        })
+    }
+}

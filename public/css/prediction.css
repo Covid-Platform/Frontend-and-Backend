@@ -282,12 +282,12 @@ form .input-box span.details{
  #dot-26:checked ~ .category label .twentysix,
  #dot-27:checked ~ .category label .twentyseven,
  #dot-28:checked ~ .category label .twentyeight,
- #dot-28:checked ~ .category label .twentynine,
- #dot-28:checked ~ .category label .thirty,
- #dot-28:checked ~ .category label .thirtyone,
- #dot-28:checked ~ .category label .thirtytwo,
- #dot-28:checked ~ .category label .thirtythree,
- #dot-28:checked ~ .category label .thirtyfour{
+ #dot-29:checked ~ .category label .twentynine,
+ #dot-30:checked ~ .category label .thirty,
+ #dot-31:checked ~ .category label .thirtyone,
+ #dot-32:checked ~ .category label .thirtytwo,
+ #dot-33:checked ~ .category label .thirtythree,
+ #dot-34:checked ~ .category label .thirtyfour{
    background: #3c6382;
    border-color: #d9d9d9;
  }
